@@ -1,0 +1,17 @@
+[package]
+name = "vps"
+version = "0.1.0"
+edition = "2021"
+authors = ["Samir Djelal <ssdjelal@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/samirdjelal/vps"
+license = "MIT"
+homepage ="https://github.com/samirdjelal/vps"
+documentation = "https://github.com/samirdjelal/vps/blob/main/README.md"
+keywords = ["vps", "vps-config", "vps-configuration", "config", "configuration"]
+description = "VPS Configuration"
+exclude = [
+    "screenshot/*",
+]
+
+[dependencies]
