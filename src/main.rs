@@ -1,9 +1,10 @@
 use std::{env, process};
 
 mod command;
+mod utils;
 
 fn main() {
-	requirements();
+	utils::requirements();
 	
 	let mut args = env::args();
 	if args.len() > 1 {
@@ -18,12 +19,4 @@ fn main() {
 		}
 	}
 	command::help();
-}
-
-
-fn requirements() {
-	if std::env::consts::OS != "linux" {
-		eprintln!("Only ubuntu are supported for now.");
-		// process::exit(1);
-	}
 }

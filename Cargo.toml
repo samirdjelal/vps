@@ -16,6 +16,7 @@ exclude = [
 
 [dependencies]
 execute = "0.2.10"
+nix = "0.23.1"
 
 [dependencies.dialoguer]
 version = "0.10.0"
