@@ -1,3 +1,4 @@
+#[warn(unused_imports)]
 use std::fs::File;
 use std::io::Read;
 
