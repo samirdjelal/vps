@@ -1,22 +1,24 @@
 use std::{env, process};
+use dialoguer::Select;
+use dialoguer::theme::ColorfulTheme;
 
 mod command;
 mod utils;
 
 fn main() {
 	utils::requirements();
+	let commands = ["xampp", "swap", "version"];
+	let index = Select::with_theme(&ColorfulTheme::default())
+		.with_prompt("VPS Manager")
+		.default(0)
+		.items(&commands)
+		.interact()
+		.unwrap();
 	
-	let mut args = env::args();
-	if args.len() > 1 {
-		if let Some(cmd) = args.nth(1) {
-			let cmd: &str = cmd.as_str();
-			match cmd {
-				"swap" => command::swap(),
-				"help" => command::help(),
-				_ => {}
-			}
-			process::exit(0);
-		}
+	match commands[index] {
+		"xampp" => command::xampp(),
+		"swap" => command::swap(),
+		"version" => command::version(),
+		_ => command::version(),
 	}
-	command::help();
 }
