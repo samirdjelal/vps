@@ -14,7 +14,6 @@ fn main() {
 		.items(&commands)
 		.interact()
 		.unwrap();
-	
 	match commands[index] {
 		"xampp" => command::xampp(),
 		"swap" => command::swap(),
