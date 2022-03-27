@@ -1,4 +1,4 @@
-use std::{env, process};
+
 use dialoguer::Select;
 use dialoguer::theme::ColorfulTheme;
 

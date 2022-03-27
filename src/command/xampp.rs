@@ -1,4 +1,4 @@
-use dialoguer::{theme::ColorfulTheme, Select, Confirm};
+use dialoguer::{theme::ColorfulTheme, Select};
 use execute::{Execute, command};
 
 pub fn xampp() {
