@@ -14,6 +14,14 @@ exclude = [
 	"screenshot/*",
 ]
 
+[lib]
+name = "vps"
+path = "src/lib.rs"
+
+[[bin]]
+name = "vps"
+path = "src/main.rs"
+
 [dependencies]
 execute = "0.2.10"
 nix = "0.23.1"
