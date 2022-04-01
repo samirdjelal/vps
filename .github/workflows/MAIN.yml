@@ -31,5 +31,5 @@ jobs:
       - name: Release
         uses: actions/upload-artifact@v3
         with:
-          name: vps.linux.zip
+          name: vps.linux
           path: target/release/vps
