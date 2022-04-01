@@ -29,7 +29,7 @@ jobs:
           name: vps.linux
           path: target/release/vps
       - name: Release
-      - uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@v1
         with:
           artifacts: "vps.linux"
           token: ${{ secrets.GITHUB_TOKEN }}
