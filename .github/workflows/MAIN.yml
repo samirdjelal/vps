@@ -28,9 +28,8 @@ jobs:
         with:
           command: test
           args: -- --nocapture
-      - run: ls -lah target/release
       - name: Release
         uses: actions/upload-artifact@v3
         with:
           name: vps
-          path: target/release/dev
+          path: target/release/vps
