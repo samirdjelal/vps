@@ -1,18 +1,35 @@
-name: Publish Release
+name: RELEASE
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 jobs:
   build:
+    name: Build & Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Create a Release
-        uses: elgohr/Github-Release-Action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install
+        uses: actions-rs/toolchain@v1
         with:
-          args: Release
+          toolchain: stable
+          profile: minimal
+          override: true
+      - name: Build
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release --verbose
+      - name: Test
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+          args: -- --nocapture
+      - name: Release
+        uses: actions/upload-artifact@v3
+        with:
+          name: vps
+          path: target/release/dev
