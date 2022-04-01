@@ -1,8 +1,9 @@
-name: DEV
+name: TEST
 
 on:
   push:
     branches:
+      - main
       - dev
 
 jobs:

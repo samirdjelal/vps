@@ -1,4 +1,4 @@
-name: MAIN
+name: BUILD
 
 on:
   push:
