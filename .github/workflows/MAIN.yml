@@ -31,5 +31,6 @@ jobs:
       - name: Release
         uses: actions/upload-artifact@v3
         with:
+          command: ls -lah target/release
           name: vps
           path: target/release/dev
