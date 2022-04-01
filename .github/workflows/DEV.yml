@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    name: Build & Test
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,11 +18,11 @@ jobs:
           toolchain: stable
           profile: minimal
           override: true
-      - name: Build
-        uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --verbose
+      # - name: Build
+      #   uses: actions-rs/cargo@v1
+      #   with:
+      #     command: build
+      #     args: --verbose
       - name: Test
         uses: actions-rs/cargo@v1
         with:

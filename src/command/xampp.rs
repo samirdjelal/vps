@@ -40,14 +40,14 @@ impl Xampp {
 			println!("XAMPP is already running");
 		} else {
 			let cmd = format!("{} start", self.path);
-			command(cmd).execute();
+			command(cmd).execute().unwrap();
 			println!("XAMPP is now running");
 		}
 	}
 	fn restart(&self) {
 		if self.status {
 			let cmd = format!("{} restart", self.path);
-			command(cmd).execute();
+			command(cmd).execute().unwrap();
 			println!("XAMPP is now running");
 		} else {
 			println!("XAMPP is not running");
@@ -56,7 +56,7 @@ impl Xampp {
 	fn stop(&self) {
 		if self.status {
 			let cmd = format!("{} stop", self.path);
-			command(cmd).execute();
+			command(cmd).execute().unwrap();
 			println!("XAMPP is now stopped");
 		} else {
 			println!("XAMPP is not running");
